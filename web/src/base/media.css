@@ -1,0 +1,33 @@
+@media screen and (min-width:500px){
+    .nav-icon{
+        display: none !important;
+    }
+    .nav-title{
+        /* width: 10vw; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav-title p{
+        color: white;
+        font-family: Georgia;
+        font-size: 1vw;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    .nav-title p:hover{
+        color: wheat;
+    }
+    .content-box{
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width:500px){
+    .nav-icon{
+        display: inline-block;
+    }
+    .nav-title{
+        display: none;
+    }
+}

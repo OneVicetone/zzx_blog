@@ -7,6 +7,9 @@
         <div class='content'>
             <div id="header">
                 <div class="nav-icon" @click="clickNav"><img src="../assets/navicon.svg" alt=""></div>
+                <div class="nav-title">
+                    <p v-for="item in navList" :key="item.name" @click="linkTo(item.path)">{{item.name}}</p>
+                </div>
                 <ul>
                     <li v-for="item in headerList" :key="item.name" @click="toUrl(item.url)"><img :src="item.icon" :alt="item.name"></li>
                 </ul>
@@ -44,6 +47,9 @@ export default {
         },
         toUrl(url){
                 window.location = url
+        },
+        linkTo(path){
+            this.$router.push(path)
         }
     },
     created(){

@@ -5,6 +5,7 @@
 </template>
 
 <style>
+@import './base/media.css';
 *{
   padding: 0;
   margin: 0;
