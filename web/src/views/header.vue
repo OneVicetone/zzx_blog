@@ -81,6 +81,7 @@ export default {
     display: flex;
     align-items: center;
     box-shadow:3px 2px 2px #9E9E9E;
+    justify-content: space-between;
 }
 #header .nav-icon{
     width: 20px;
@@ -98,7 +99,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 40vw;
+    margin-right: 2vw;
 }
 #header ul li{
     width: 20px;

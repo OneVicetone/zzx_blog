@@ -1,9 +1,9 @@
-@media screen and (min-width:500px){
+@media screen and (min-width:420px) and (max-width:1024px){
     .nav-icon{
         display: none !important;
     }
     .nav-title{
-        /* width: 10vw; */
+        width: 30vw;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -11,23 +11,60 @@
     .nav-title p{
         color: white;
         font-family: Georgia;
-        font-size: 1vw;
+        font-size: 1.2vh;
         cursor: pointer;
         white-space: nowrap;
+        margin-left: 2vw;
     }
     .nav-title p:hover{
         color: wheat;
     }
     .content-box{
-        width: 40vw;
+        width: 44vw;
+        display: inline-block;
+        margin: 5vh 3vw 0vh 3vw;
+        transition: all 0.5s ease;
     }
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:420px){
     .nav-icon{
         display: inline-block;
     }
     .nav-title{
         display: none;
+    }
+    .content-box{
+        width: 90vw;
+        margin: 5vh auto;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .nav-icon{
+        display: none !important;
+    }
+    .nav-title{
+        width: 30vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav-title p{
+        color: white;
+        font-family: Georgia;
+        font-size: 1.2vh;
+        cursor: pointer;
+        white-space: nowrap;
+        margin-left: 2vw;
+    }
+    .nav-title p:hover{
+        color: wheat;
+    }
+    .content-box{
+        width: 22vw;
+        display: inline-block;
+        margin: 5vh 3vw 0vh 3vw;
+        transition: all 0.5s ease;
     }
 }

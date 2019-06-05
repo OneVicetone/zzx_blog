@@ -5,7 +5,7 @@
 </template>
 
 <style>
-@import './base/media.css';
+
 *{
   padding: 0;
   margin: 0;
@@ -15,4 +15,5 @@
   text-align: center;
   overflow: hidden;
 }
+@import './base/media.css';
 </style>

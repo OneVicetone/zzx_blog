@@ -35,15 +35,19 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .content-box{
-    width: 90vw;
     height: auto;
     border-radius: 3px;
     box-shadow:0px 6px 12px #BABABA;
-    margin: 5vh auto;
-    font-family: Georgia;
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif;
 }
+.content-box:hover{
+        /* box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px; */
+        box-shadow:0px 6px 22px #BABABA;
+        transition: all 0.4s ease;
+        transform: translate3D(0, -1px, 0) scale(1.02);
+    }
 .img-box{
     width: 100%;
     height: auto;
@@ -76,16 +80,17 @@ export default {
     padding-bottom: 2vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .content-by .icon{
     width: 20px;
     height: 20px;
     border-radius: 20px;
+    margin-left: 20px;
 }
 .content-by .date{
-    font-size: 2vw;
-    margin-left: 40vw;
+    font-size: 12px;
+    margin-right: 20px;
 }
 </style>
 
