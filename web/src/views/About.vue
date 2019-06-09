@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     postArticles(){
-      this.$http.post('/admin/api/uploadArticle',{
+      this.$http.post('/admin/api/article',{
         img:"http://images2.fanpop.com/images/photos/7800000/Nature-Full-HD-Wallpaper-national-geographic-7822726-1920-1080.jpg",
         title:"Multer",
         simpleMessage:"222222222222",
@@ -33,7 +33,7 @@ export default {
     },
     deletArticles(){
       if(this.id !== ''){
-        this.$http.delete(`/admin/api/deleteArticleById/${this.id}`).then(res=>{
+        this.$http.delete(`/admin/api/article/${this.id}`).then(res=>{
           console.log(res)
         })
       }else{

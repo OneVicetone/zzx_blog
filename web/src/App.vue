@@ -12,8 +12,8 @@
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
   overflow: hidden;
+  text-overflow: clip;
 }
 @import './base/media.css';
 </style>

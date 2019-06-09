@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MessageBox from '../components/message_box.vue'
+import MessageBox from '../components/messageBox.vue'
 // import IndexWelcome from '../components/indexWelcome.vue'
 
 export default {

@@ -25,6 +25,9 @@
         margin: 5vh 3vw 0vh 3vw;
         transition: all 0.5s ease;
     }
+    .content-box .img-box{
+        height: 30vh;
+    }
 }
 
 @media screen and (max-width:420px){
@@ -62,9 +65,13 @@
         color: wheat;
     }
     .content-box{
-        width: 22vw;
+        width: 30vw;
         display: inline-block;
-        margin: 5vh 3vw 0vh 3vw;
+        margin: 5vh 1vw 0vh 1vw;
         transition: all 0.5s ease;
+        vertical-align: middle;
+    }
+    .content-box .img-box{
+        height: 30vh;
     }
 }

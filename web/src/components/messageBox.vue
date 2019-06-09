@@ -50,7 +50,6 @@ export default {
     }
 .img-box{
     width: 100%;
-    height: auto;
 }
 .img-box img{
     width: 100%;

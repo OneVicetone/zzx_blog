@@ -45,6 +45,7 @@ export default {
     height: 100vh;
     background: rgb(29,31,33);
     font-family: Georgia;
+    text-align: center;
 }
 #nav ul li{
     width: 60vw;
