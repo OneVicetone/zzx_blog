@@ -1,16 +1,19 @@
 <template>
     <el-container style="height: 100vh; border: 1px solid #eee">
         <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-            <el-menu :default-openeds="['1']">
+            <el-menu :default-openeds="['1','2']">
               <el-submenu index="1">
                 <template slot="title"><i class="el-icon-message"></i>管理</template>
                 <el-menu-item-group>
                   <template slot="title">文章管理</template>
-                  <el-menu-item index="1-1" @click="toCreateArticle">发布文章</el-menu-item>
-                  <el-menu-item index="1-2" @click="toArticlesList">文章列表</el-menu-item>
+                  <el-menu-item index="1-1" @click="linkTo('editArticle')">发布文章</el-menu-item>
+                  <el-menu-item index="1-2" @click="linkTo('articlesList')">文章列表</el-menu-item>
                 </el-menu-item-group>
-                
-                
+                <el-menu-item-group>
+                  <template slot="title">管理员账号管理</template>
+                  <el-menu-item index="2-1" @click="linkTo('editUser')">新建管理员账号</el-menu-item>
+                  <el-menu-item index="2-2" @click="linkTo('userList')">管理员账号列表</el-menu-item>
+                </el-menu-item-group>
               </el-submenu>
             </el-menu>
         </el-aside>
@@ -46,21 +49,13 @@
 <script>
   export default {
     data() {
-      const item = {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      };
-      return {
-        tableData: Array(20).fill(item)
+      return{
+
       }
     },
     methods:{
-      toCreateArticle(){
-        this.$router.push('/editArticle')
-      },
-      toArticlesList(){
-        this.$router.push('/articlesList')
+      linkTo(link){
+        this.$router.push(`/${link}`)
       }
     }
   };
