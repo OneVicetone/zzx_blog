@@ -11,13 +11,13 @@ import userList from './views/user/userList'
 
 import login from './views/login'
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes:[
         {
             path: '/',
-            redirect: '/login'
+            redirect: '/login',
         },
         {
             path: '/main',
@@ -55,7 +55,17 @@ export default new Router({
         },
         {
             path: '/login',
-            component: login
+            component: login,
+            meta:{isPublic:true}
         }
     ]
 })
+
+router.beforeEach((to,from,next)=>{
+    if(!to.meta.isPublic && !localStorage.token){
+        return next('/login')
+    }
+    next()
+})
+
+export default router
