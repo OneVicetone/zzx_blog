@@ -6,7 +6,7 @@
         <el-form-item label="预览图片">
             <el-upload
                 class="avatar-uploader"
-                action="http://192.168.1.5:4000/admin/api/upload"
+                action="http://47.112.210.149:4000/admin/api/upload"
                 :show-file-list="false"
                 :on-success="uploadSuccess">
                     <img v-if="article.img" :src="article.img" class="avatar">

@@ -45,7 +45,7 @@ module.exports = app => {
     const upload = multer({dest: __dirname + '/../../uploads'})
     app.use('/admin/api/upload',upload.single('file'),async (req,res)=>{
         const file = req.file
-        file.url = `http://192.168.1.5:4000/uploads/${file.filename}`
+        file.url = `http://47.112.210.149:4000/uploads/${file.filename}`
         res.send(file)
     })
 
