@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="article-container">
         <div class="content-box" v-for="(item,index) in messages" :key="index" @click="toArticlePage(item._id)">
             <div class='img-box'>
                 <img :src="item.img" alt="">
@@ -39,21 +39,22 @@ export default {
 .content-box{
     height: auto;
     border-radius: 3px;
-    box-shadow:0px 6px 12px #BABABA;
+    box-shadow:0px 2px 10px rgb(243, 241, 241);
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif;
 }
-.content-box:hover{
-        /* box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px; */
-        box-shadow:0px 6px 22px #BABABA;
-        transition: all 0.4s ease;
-        transform: translate3D(0, -1px, 0) scale(1.02);
-    }
+/* .content-box:hover{
+    box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px;
+    box-shadow:0px 6px 22px #BABABA;
+    transition: all 0.4s ease;
+    transform: translate3D(0, -1px, 0) scale(1.02);
+} */
 .img-box{
     width: 100%;
+    height: 20vh;
 }
 .img-box img{
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border-top-left-radius:3px;
     border-top-right-radius:3px;
 }
@@ -82,8 +83,8 @@ export default {
     justify-content: space-between;
 }
 .content-by .icon{
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 20px;
     margin-left: 20px;
 }

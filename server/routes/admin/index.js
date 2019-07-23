@@ -9,18 +9,12 @@ module.exports = app => {
     // const Article = require('../../models/Article')
 
     //校验token中间件
-    const authMiddleware = async (req,res,next)=>{
-        const userToken = String(req.headers.authorization || '').split(' ').pop()
-        console.log(userToken)
-        assert(userToken,401,'请重新登录')
-        const {id} = jwt.verify(userToken,app.get('secret'))
-        assert(id,401,'请重新登录')
-        req.user = await AdminUser.findById(id)
-        assert(req.user,401,'请先登录')
-        await next()
-    }
+    const authMiddleware = require('../../middleware/auth')()
+
+    const resourceMiddleWare = require('../../middleware/resource')()
 
     routes.post('/',async (req,res)=>{
+        req.body.userIcon = 'http://localhost:4000/assets/android.svg'
         const item = await req.Model.create(req.body)
         res.send(item)
     })
@@ -45,17 +39,13 @@ module.exports = app => {
         res.send(item)
     })
 
-    app.use('/admin/api/crud/:resource',authMiddleware,async (req,res,next)=>{
-        const modelName = require('inflection').classify(req.params.resource)
-        req.Model = require(`../../models/${modelName}`)
-        next()
-    },routes)
+    app.use('/admin/api/crud/:resource',authMiddleware,resourceMiddleWare,routes)
 
     const multer = require('multer')
     const upload = multer({dest: __dirname + '/../../uploads'})
     app.use('/admin/api/upload',upload.single('file'),async (req,res)=>{
         const file = req.file
-        file.url = `http://192.168.1.3:4000/uploads/${file.filename}`
+        file.url = `http://192.168.1.5:4000/uploads/${file.filename}`
         res.send(file)
     })
 
@@ -79,7 +69,8 @@ module.exports = app => {
         const token = jwt.sign({id:findUser._id},app.get('secret'))
         res.send({
             token,
-            user:findUser.user
+            user:findUser.user,
+            _id:findUser._id
         })
     })
 
@@ -89,4 +80,5 @@ module.exports = app => {
             msg:err.message
         })
     })
+
 }

@@ -46,7 +46,7 @@ export default {
                 this.$router.push('/userList')
                 this.$message({
                     type: `success`,
-                    message: `添加文章成功！`
+                    message: `添加账号成功！`
                 })
             }
         },

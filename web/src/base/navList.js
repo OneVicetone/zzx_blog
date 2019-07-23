@@ -1,6 +1,6 @@
 const navList = [
     {
-        name:"INDEX",
+        name:"HOME",
         path:"/index"
     },
     {

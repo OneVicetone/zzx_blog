@@ -3,10 +3,13 @@
         <div class="topImg">
             <img :src="article.img" alt="">
         </div>
-        <!-- <div class="createUser">
-            <img :src="article.userIcon" alt="">
-            <span>{{article.createTime}}</span>
-        </div> -->
+        <div class="createUser">
+            <div>
+                <img src="../assets/android.svg" alt="">
+                <span>by ZZX</span>
+            </div>
+            <p>{{article.createTime}}</p>
+        </div>
         <div class="article-text">
             <h2>{{article.title}}</h2>
             <div v-html="article.messageContent" class="article-content"></div>
@@ -32,18 +35,20 @@ export default {
 
 <style>
 .topImg{
-    width: 100vw;
+    width: 50vmin;
     height: auto;
+    margin: 15vh auto 0;
 }
 .topImg img{
     width: 100%;
     height: 100%;
+    /* padding-bottom: 30%; */
 }
 .createUser{
     width: 100vw;
     height: 5vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 5vh;
 }
@@ -53,15 +58,24 @@ export default {
     border-radius: 50px;
     background-color: wheat;
 }
-.createUser span{
+.createUser div{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+}
+.createUser div span{
+    margin-left: 2vmax;
+}
+.createUser p{
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif;
-    font-size: 3vw;
-    margin-left: 40vw;
+    font-size: 3vmin;
+    margin-right: 2vmax;
 }
 .article-text{
     margin: 5vh auto;
 }
-.article-text h2{
+.article-text>h2{
     font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif;
     margin: 1vh 0 1vh 2vw;
 }
@@ -77,8 +91,15 @@ pre{
     padding: 1vh 2.5vw;
     border-radius: 3px;
     margin: 1vh auto;
-    color: white;
+    color: #cacaca;
     line-height: 2.5vh;
+    overflow: auto;
+}
+ol , ul{
+    margin-left: 5vmin;
+}
+.article-content p{
+    padding-bottom: 1vmax;
 }
 </style>
 

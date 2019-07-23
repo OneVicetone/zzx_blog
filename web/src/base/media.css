@@ -25,8 +25,9 @@
         margin: 5vh 3vw 0vh 3vw;
         transition: all 0.5s ease;
     }
-    .content-box .img-box{
-        height: 30vh;
+    .all-message{
+        width: 100vw;
+        column-count: 2;
     }
 }
 
@@ -39,7 +40,7 @@
     }
     .content-box{
         width: 90vw;
-        margin: 5vh auto;
+        margin: 5vh 5vw;
     }
 }
 
@@ -65,13 +66,36 @@
         color: wheat;
     }
     .content-box{
-        width: 30vw;
+        /* width: 28vw;
         display: inline-block;
-        margin: 5vh 1vw 0vh 1vw;
-        transition: all 0.5s ease;
-        vertical-align: middle;
+        margin: 5vh 1.5vw 0vh 1.5vw;
+        transition: all 0.5s ease; */
     }
-    .content-box .img-box{
-        height: 30vh;
+    .article-container{
+        margin: 5vh auto 0 auto;
+        display: inline-grid;
+        grid-template-columns: repeat(3,30vw);
+        grid-row-gap: 2vw;
+        grid-column-gap: 2vw;
+        grid-row-gap: 5vh;
+        grid-auto-flow: row dense;
+        padding-bottom: 5vh;
     }
+    .article-container .content-box:first-child{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    /* .article-container .content-box:last-child{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    } */
+
+
+    
+    /* .all-message{
+        width: 93vw;
+        margin: 0 auto;
+        column-count: 3;
+    } */
 }
+

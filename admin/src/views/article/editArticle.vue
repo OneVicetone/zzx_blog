@@ -6,7 +6,7 @@
         <el-form-item label="预览图片">
             <el-upload
                 class="avatar-uploader"
-                action="http://192.168.1.3:4000/admin/api/upload"
+                action="http://192.168.1.5:4000/admin/api/upload"
                 :show-file-list="false"
                 :on-success="uploadSuccess">
                     <img v-if="article.img" :src="article.img" class="avatar">
@@ -106,7 +106,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;

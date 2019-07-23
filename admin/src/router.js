@@ -63,6 +63,10 @@ const router = new Router({
 
 router.beforeEach((to,from,next)=>{
     if(!to.meta.isPublic && !localStorage.token){
+        Vue.prototype.$message({
+            type: `warning`,
+            message: `请重新登录`
+        })
         return next('/login')
     }
     next()

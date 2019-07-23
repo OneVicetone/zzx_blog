@@ -5,6 +5,7 @@
         </transition>
 
         <div class='content'>
+            <transition name="header-transition">
             <div id="header">
                 <div class="nav-icon" @click="clickNav"><img src="../assets/navicon.svg" alt=""></div>
                 <div class="nav-title">
@@ -14,7 +15,10 @@
                     <li v-for="item in headerList" :key="item.name" @click="toUrl(item.url)"><img :src="item.icon" :alt="item.name"></li>
                 </ul>
             </div>
-            <router-view/>
+            </transition>
+            <transition name="section-transition">
+                <router-view/>
+            </transition>
         </div>
     </div>
 </template>
@@ -71,6 +75,7 @@ export default {
     width: 100vw;
     display: flex;
     flex-wrap: nowrap;
+    z-index: 999;
 }
 #header{
     height: 10vh;
@@ -82,6 +87,9 @@ export default {
     align-items: center;
     box-shadow:3px 2px 2px #9E9E9E;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 999;
 }
 #header .nav-icon{
     width: 20px;
@@ -121,7 +129,24 @@ export default {
 .nav-transition-enter, .nav-transition-leave-to{
     margin-left: -60vw;
 }
-/* .stop-move{
-    position: fixed;
-} */
+.header-transition-enter-active, .header-transition-leave-active{
+    transition: all .5s
+}
+.header-transition-enter-to{
+    display: block;
+}
+.header-transition-enter, .header-transition-leave-to{
+    display: none;
+}
+.section-transition-enter, .section-transition-leave-to{
+    transform: translateX(20px);
+    opacity: 0;
+}
+.section-transition-enter-to{
+    transform: translateX(0px);
+    opacity: 1;
+}
+.section-transition-enter-active, .section-transition-leave-active{
+    transition: all .5s ease-in;
+}
 </style>

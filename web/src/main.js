@@ -22,6 +22,15 @@ Vue.prototype.$http = http
 
 
 
+window.onscroll = ()=>{
+  const body = document.getElementsByTagName('body')[0]
+  const scrollTop = document.documentElement.scrollTop
+  const bodyHeight = body.clientHeight
+  const windowHeight = window.innerHeight
+  const buttomNum = bodyHeight - (scrollTop + windowHeight)
+}
+
+
 new Vue({
   router,
   render: h => h(App)

@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div class="outer-box">
         <!-- <IndexWelcome></IndexWelcome> -->
+        <div class="padding-box"></div>
         <MessageBox :messages="messages"></MessageBox>
     </div>
 </template>
@@ -24,6 +25,16 @@ export default {
         this.$http.get('/web/api/getIndexMessages').then(res=>{
             this.messages = res.data
         })
-    }
+    },
 }
 </script>
+
+<style scoped>
+.padding-box{
+    width: 100vw;
+    height: 10vh;
+}
+.outer-box{
+    text-align: center;
+}
+</style>
