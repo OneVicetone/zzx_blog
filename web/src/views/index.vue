@@ -22,7 +22,7 @@ export default {
         }
     },
     created(){
-        this.$http.get('/web/api/getIndexMessages').then(res=>{
+        this.$http.get('/getIndexMessages').then(res=>{
             this.messages = res.data
         })
     },

@@ -12,7 +12,7 @@ import userList from './views/user/userList'
 import login from './views/login'
 
 const router = new Router({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes:[
         {

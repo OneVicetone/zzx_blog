@@ -2,7 +2,7 @@ import axios from 'axios'
 import Vue from 'vue'
 import router from '../router'
 const http = axios.create({
-    baseURL: 'http://47.112.210.149:4000/admin/api',
+    baseURL: process.env.VUE_APP_API_URL || '/admin/api',
     timeout: 1000
 })
 

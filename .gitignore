@@ -1,2 +1,5 @@
 node_modules
-upload
+server/upload/*
+dist
+server/admin
+server/web

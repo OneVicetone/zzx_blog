@@ -26,7 +26,7 @@ export default {
         }
     },
     created(){
-        this.$http.get(`/web/api/getArticleById/${this.id}`).then(res=>{
+        this.$http.get(`/getArticleById/${this.id}`).then(res=>{
             this.article = res.data
         })
     }
