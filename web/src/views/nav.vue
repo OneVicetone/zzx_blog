@@ -35,7 +35,6 @@ export default {
   },
   created() {
       this.navHeight = document.getElementsByTagName('html')[0].scrollHeight + 'px'
-      console.log($router)
   }
 };
 </script>

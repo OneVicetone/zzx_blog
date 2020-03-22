@@ -14,7 +14,7 @@ module.exports = app => {
     const resourceMiddleWare = require('../../middleware/resource')()
 
     routes.post('/',async (req,res)=>{
-        req.body.userIcon = 'http://47.112.210.149:4000/web/img/pig.svg'
+        // req.body.userIcon = 'http://47.112.210.149:4000/web/img/pig.svg'
         const item = await req.Model.create(req.body)
         res.send(item)
     })
@@ -45,7 +45,7 @@ module.exports = app => {
     const upload = multer({dest: __dirname + '/../../uploads'})
     app.use('/admin/api/upload',upload.single('file'),async (req,res)=>{
         const file = req.file
-        file.url = `http://47.112.210.149:4000/uploads/${file.filename}`
+        file.url = `http://zhuzhaoxuan.xyz:4000/uploads/${file.filename}`
         res.send(file)
     })
 

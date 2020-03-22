@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <transition name="nav-transition">
-      <Nav v-if="navIsShow" :navList="navList" @closeNav="clickNav"></Nav>
+      <Nav v-show="navIsShow" :navList="navList" @closeNav="clickNav"></Nav>
     </transition>
 
     <div class="content">
@@ -138,7 +138,7 @@ export default {
 }
 .nav-transition-enter,
 .nav-transition-leave-to {
-  margin-left: -60vw;
+  margin-left: -70vw;
 }
 .header-transition-enter-active,
 .header-transition-leave-active {

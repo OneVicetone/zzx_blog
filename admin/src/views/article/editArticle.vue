@@ -6,7 +6,7 @@
         <el-form-item label="预览图片">
             <el-upload
                 class="avatar-uploader"
-                action="http://47.112.210.149:4000/admin/api/upload"
+                :action='`${uploadFileUrl}/upload`'
                 :show-file-list="false"
                 :on-success="uploadSuccess">
                     <img v-if="article.img" :src="article.img" class="avatar">
@@ -31,6 +31,7 @@ export default {
     props:["id"],
     data(){
         return{
+            uploadFileUrl:process.env.VUE_APP_API_URL,
             article:{
                 title:'',
                 img:'',

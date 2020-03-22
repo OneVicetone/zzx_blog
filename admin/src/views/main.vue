@@ -57,7 +57,7 @@
       },
     },
     created(){
-      this.userInfo = JSON.parse(localStorage.userInfo)
+      // this.userInfo = JSON.parse(localStorage.userInfo)
     }
   };
 </script>
