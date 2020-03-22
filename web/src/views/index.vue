@@ -35,6 +35,7 @@ export default {
     height: 10vh;
 }
 .outer-box{
+    min-height: 100vh;
     text-align: center;
 }
 </style>

@@ -4,6 +4,7 @@ import router from './router'
 import http from './base/axios'
 Vue.config.productionTip = false
 Vue.prototype.$http = http
+console.log(router)
 // 阻止页面滑动
 // Vue.prototype.noScroll = function () {
 //   let mo = function (e) { e.preventDefault() }
@@ -22,13 +23,13 @@ Vue.prototype.$http = http
 
 
 
-window.onscroll = ()=>{
-  const body = document.getElementsByTagName('body')[0]
-  const scrollTop = document.documentElement.scrollTop
-  const bodyHeight = body.clientHeight
-  const windowHeight = window.innerHeight
-  const buttomNum = bodyHeight - (scrollTop + windowHeight)
-}
+// window.onscroll = ()=>{
+//   const body = document.getElementsByTagName('body')[0]
+//   const scrollTop = document.documentElement.scrollTop
+//   const bodyHeight = body.clientHeight
+//   const windowHeight = window.innerHeight
+//   const buttomNum = bodyHeight - (scrollTop + windowHeight)
+// }
 
 
 new Vue({

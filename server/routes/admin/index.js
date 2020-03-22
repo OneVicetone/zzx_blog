@@ -14,7 +14,7 @@ module.exports = app => {
     const resourceMiddleWare = require('../../middleware/resource')()
 
     routes.post('/',async (req,res)=>{
-        req.body.userIcon = 'http://localhost:4000/assets/android.svg'
+        req.body.userIcon = 'http://47.112.210.149:4000/web/img/pig.svg'
         const item = await req.Model.create(req.body)
         res.send(item)
     })
